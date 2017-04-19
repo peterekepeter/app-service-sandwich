@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppServiceSandwitch", "AppServiceSandwitch\AppServiceSandwitch.vcxproj", "{00E14769-860E-4F44-9B7D-2733FF5ADE62}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AppServiceSandwich", "AppServiceSandwich\AppServiceSandwich.vcxproj", "{00E14769-860E-4F44-9B7D-2733FF5ADE62}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestAppServiceSandwitch", "TestAppServiceSandwitch\TestAppServiceSandwitch.vcxproj", "{64F433B9-C760-4B25-9FD4-50BF703D1B60}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestAppServiceSandwich", "TestAppServiceSandwich\TestAppServiceSandwich.vcxproj", "{64F433B9-C760-4B25-9FD4-50BF703D1B60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
