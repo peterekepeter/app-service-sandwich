@@ -225,10 +225,7 @@ private:
 	ResourceManager* resourceManager = nullptr;
 	const ResourcePath* resourcePath = nullptr;
 public:
-	template <typename T> ResourcePtr<T> Require(const ResourcePath& newLocation)
-	{
-		return resourceManager->Require<T>(*resourcePath, newLocation);
-	}
+	template <typename T> ResourcePtr<T> Require(const ResourcePath& newLocation);
 };
 
 class ManagedResource
@@ -367,6 +364,13 @@ public:
 private:
 	
 };
+
+template<typename T>
+inline ResourcePtr<T> ResourceManagerLocation::Require(const ResourcePath& newLocation)
+{
+	return resourceManager->Require<T>(*resourcePath, newLocation);
+}
+
 
 /*
 	idea box:

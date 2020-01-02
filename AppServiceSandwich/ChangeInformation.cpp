@@ -1,5 +1,6 @@
 
 #include "ChangeInformation.hpp"
+#include <ostream>
 #include <string>
 
 std::ostream& operator<<(std::ostream& os, const ChangeInformation& obj)
