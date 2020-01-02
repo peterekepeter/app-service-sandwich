@@ -41,7 +41,11 @@ public:
 		void UseInstanceTransferOwnership(T* newInstance);
 
 		// use shared instance
+		[[deprecated("use UseSharedInstance instead")]]
 		void UseInstance(T* newInstance);
+
+		// use shared instance
+		void UseSharedInstance(T* newInstance);
 
 		~ExpressionContext();
 
@@ -160,10 +164,18 @@ inline void DependencyManager::ExpressionContext<T>::UseInstanceTransferOwnershi
 template<typename T>
 inline void DependencyManager::ExpressionContext<T>::UseInstance(T * newInstance)
 {
+	UseSharedInstance(newInstance);
+}
+
+// use shared instance
+template<typename T>
+inline void DependencyManager::ExpressionContext<T>::UseSharedInstance(T* newInstance)
+{
 	Cleanup();
 	owned = false;
 	instance = newInstance;
 }
+
 
 template<typename T>
 inline DependencyManager::ExpressionContext<T>::~ExpressionContext()

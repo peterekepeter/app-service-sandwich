@@ -12,8 +12,8 @@ public:
 	ApplicationServices()
 	{
 		Console::SetDefaultInstance(&console);
-		dependency.For<ResourceManager>().UseInstance(&resource);
-		dependency.For<Console>().UseInstance(&console);
+		dependency.For<ResourceManager>().UseSharedInstance(&resource);
+		dependency.For<Console>().UseSharedInstance(&console);
 		resource.UseConsole(&console);
 		resource.UseTryCatchFactory(true);
 	}
