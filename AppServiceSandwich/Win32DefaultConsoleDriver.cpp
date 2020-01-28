@@ -18,6 +18,9 @@ void Win32DefaultConsoleDriver::SetTitle(const std::string& buffer)
 
 void Win32DefaultConsoleDriver::WriteOutput(const std::string& buffer)
 {
+	if (buffer.size() == 0) {
+		return;
+	}
 	auto handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	DWORD written = 0;
 	SetConsoleTextAttribute(handle, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED);
@@ -26,6 +29,9 @@ void Win32DefaultConsoleDriver::WriteOutput(const std::string& buffer)
 
 void Win32DefaultConsoleDriver::WriteError(const std::string& buffer)
 {
+	if (buffer.size() == 0) {
+		return;
+	}
 	auto handle = GetStdHandle(STD_ERROR_HANDLE);
 	DWORD written = 0;
 	SetConsoleTextAttribute(handle, FOREGROUND_RED | FOREGROUND_INTENSITY);
