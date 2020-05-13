@@ -23,6 +23,7 @@ class Console
 	IConsoleDriver* driver = nullptr;
 	std::vector<std::string> outputBuffer;
 	std::vector<std::string> errorBuffer;
+	size_t progressTag = 0;
 	void FlushDriverlessBuffers();
 public:
 
@@ -36,6 +37,8 @@ public:
 	{
 	private:
 		Console *stream;
+
+		size_t progressTag;
 
 	public:
 		Transaction(const Transaction& other) = delete;
@@ -54,6 +57,8 @@ public:
 
 		explicit Transaction(Console* stream);
 
+		explicit Transaction(Console* stream, size_t progressTag);
+
 		std::ostringstream Output;
 		std::ostringstream Error;
 
@@ -64,7 +69,16 @@ public:
 		~Transaction();
 	};
 
+	// if two subsequent progress prints share the same tag
+	// they will override each other, useful for progress bars
+	Transaction ProgressPrinter(const void* tag);
+
+	// Creates a new printer to print with 
+	// (deprecated) use CreatePrinter() insatead
 	Transaction Open();
+
+	// Creates a new printer to print with
+	Transaction Printer();
 
 	Transaction operator ()();
 
