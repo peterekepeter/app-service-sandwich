@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="ApplicationServices.hpp" />
     <ClInclude Include="ChangeInformation.hpp" />
+    <ClInclude Include="CommandLineParser.hpp" />
     <ClInclude Include="Console.hpp" />
     <ClInclude Include="DependencyManager.hpp" />
     <ClInclude Include="DirectoryChangeReader.hpp" />
@@ -35,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChangeInformation.cpp" />
+    <ClCompile Include="CommandLineParser.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="DirectoryChangeReader.cpp" />
     <ClCompile Include="DirectoryChangeService.cpp" />
