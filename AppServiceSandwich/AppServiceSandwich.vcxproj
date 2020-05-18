@@ -28,6 +28,7 @@
     <ClInclude Include="DirectoryChangeService.hpp" />
     <ClInclude Include="FileTimestampQuery.hpp" />
     <ClInclude Include="ITimestampingService.hpp" />
+    <ClInclude Include="ProcessCommand.hpp" />
     <ClInclude Include="ResourceManager.hpp" />
     <ClInclude Include="ResourcePath.hpp" />
     <ClInclude Include="Win32DefaultConsoleDriver.hpp" />
@@ -45,6 +46,7 @@
     <ClCompile Include="ResourcePath.cpp" />
     <ClCompile Include="Win32DefaultConsoleDriver.cpp" />
     <ClCompile Include="Win32MessageBoxConsoleDriver.cpp" />
+    <ClCompile Include="Win32ProcessCommand.cpp" />
     <ClCompile Include="Win32TimestampingService.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
