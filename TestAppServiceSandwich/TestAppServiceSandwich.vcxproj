@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CommandLineParserTest.cpp" />
+    <ClCompile Include="DependencyManagerAutoFactoryTest.cpp" />
     <ClCompile Include="DependencyManagerTest.cpp" />
     <ClCompile Include="ResourceManagerTest.cpp" />
     <ClCompile Include="ResourcePathTest.cpp" />

@@ -1,12 +1,11 @@
 #pragma once
 #include <functional>
 #include <unordered_map>
+#include <type_traits>
 
 
 class DependencyManager
 {
-	std::unordered_map<std::string, void*> container;
-
 public:
 
 	template <typename T> class ExpressionContext
@@ -65,6 +64,35 @@ public:
 			ptr.second = nullptr;
 		}
 	}
+private:
+
+	std::unordered_map<std::string, void*> container;
+
+	template <typename T> 
+	typename std::enable_if<
+		std::is_constructible<T, DependencyManager*>::value, T*
+	>::type TryCreateAutoInstance() 
+	{
+		return new T(this);
+	}
+
+	template <typename T> 
+	typename std::enable_if<
+		std::is_default_constructible<T>::value, T*
+	>::type TryCreateAutoInstance() 
+	{
+		return new T();
+	}
+
+	template <typename T>
+	typename std::enable_if<
+		!std::is_default_constructible<T>::value && 
+		!std::is_constructible<T, DependencyManager*>::value, T*
+	>::type TryCreateAutoInstance()
+	{
+		return nullptr;
+	}
+
 };
 
 template <typename T> DependencyManager::ExpressionContext<T>& DependencyManager::For()
@@ -91,17 +119,24 @@ template <typename T> T* DependencyManager::GetInstance()
 	{
 		if (context.factory == nullptr)
 		{
-			throw std::runtime_error(std::string("Dependency is not configured for ") + typeid(T).name() + ".");
+			context.instance = TryCreateAutoInstance<T>();
+			if (context.instance == nullptr) {
+				// if you end up here with debugger, you need to add a registration in 
+				// DependencyManager for your type
+				throw std::runtime_error(
+					std::string("Dependency is not configured for \"")
+					+ typeid(T).name() + "\", configuration required.");
+			}
 		}
-		else
+		else 
 		{
 			// build the instance
 			context.instance = context.factory();
-			// check if returned nullptr
-			if (context.instance == nullptr)
-			{
-				throw std::runtime_error(std::string("Factory returned nullptr for ") + typeid(T).name() + ".");
-			}
+		}
+		// check if returned nullptr
+		if (context.instance == nullptr)
+		{
+			throw std::runtime_error(std::string("Factory returned nullptr for ") + typeid(T).name() + ".");
 		}
 	}
 	return context.instance;
