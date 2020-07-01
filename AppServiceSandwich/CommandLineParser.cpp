@@ -55,7 +55,7 @@ void CommandLineParser::Parse(
 				}
 			}
 		}
-		throw std::runtime_error("option not found");
+		throw std::runtime_error(std::string("option \"") + arg + "\" not found!");
 	}
 }
 
