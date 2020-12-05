@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AutoBuildTest.cpp" />
     <ClCompile Include="CommandLineParserTest.cpp" />
     <ClCompile Include="DependencyManagerAutoFactoryTest.cpp" />
     <ClCompile Include="DependencyManagerTest.cpp" />

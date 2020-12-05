@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ApplicationServices.hpp" />
+    <ClInclude Include="AutoBuild.hpp" />
     <ClInclude Include="ChangeInformation.hpp" />
     <ClInclude Include="CommandLineParser.hpp" />
     <ClInclude Include="Console.hpp" />
@@ -36,6 +37,7 @@
     <ClInclude Include="Win32TimestampingService.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AutoBuild.cpp" />
     <ClCompile Include="ChangeInformation.cpp" />
     <ClCompile Include="CommandLineParser.cpp" />
     <ClCompile Include="Console.cpp" />
