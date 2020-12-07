@@ -78,7 +78,8 @@ private:
 
 	template <typename T> 
 	typename std::enable_if<
-		std::is_default_constructible<T>::value, T*
+		std::is_default_constructible<T>::value &&
+		!std::is_constructible<T, DependencyManager*>::value, T*
 	>::type TryCreateAutoInstance() 
 	{
 		return new T();
