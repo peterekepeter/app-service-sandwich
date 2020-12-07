@@ -8,10 +8,18 @@ class AutoBuild
 {
 public:
 
-	static const int result_success = 0;
-	static const int result_failure = 1;
+	bool m_is_idle = true;
+	bool m_is_success = true;
+	int m_completed_step_count = 0;
+	int m_total_step_count = 0;
+	int m_failed_step_count = 0;
+
+	static const int RESULT_SUCCESS = 0; 
+	static const int RESULT_FAILURE = 1; // use any other non-zero code to inidcate error
+
 	void tool(const char* tool_label, std::function<int(const char*, const char*)> implementation);
 	void step(const char* tool_label, const char* in_file, const char* out_file);
+	void notify_file_change(const char* file);
 	void wait_idle();
 
 private:

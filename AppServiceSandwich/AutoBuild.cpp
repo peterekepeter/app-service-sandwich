@@ -2,6 +2,9 @@
 
 void AutoBuild::tool(const char* label, std::function<int(const char*, const char*)> implementation)
 {
+	m_is_idle = false;
+	m_is_success = false;
+
 	std::string label_str = label;
 	if (tools.find(label_str) == tools.end())
 	{
@@ -11,15 +14,30 @@ void AutoBuild::tool(const char* label, std::function<int(const char*, const cha
 	auto& tool = tool_iterator->second;
 	tool.label = tool_iterator->first.c_str();
 	tool.implementation = implementation;
+
+	invalidate_steps_belonging_to_tool(tool);
 }
 
 void AutoBuild::step(const char* tool_label, const char* in_file, const char* out_file)
 {
+	m_is_idle = false;
+	m_is_success = false;
+
 	Step step_id{ tool_label, in_file, out_file };
 	if (steps.find(step_id) == steps.end()) {
 		StepState step_state{ false };
 		steps.emplace(step_id, step_state);
 	}
+
+	m_total_step_count = (int)steps.size();
+}
+
+void AutoBuild::notify_file_change(const char* file)
+{
+	m_is_idle = false;
+	m_is_success = false;
+
+	invalidate_dependant_steps(file);
 }
 
 void AutoBuild::wait_idle()
@@ -74,9 +92,12 @@ void AutoBuild::invalidate_dependant_steps(std::unordered_set<std::string>& in_f
 void AutoBuild::tick()
 {
 	// TODO: move to worker threads
+	m_is_idle = false;
 	bool stabilized = false;
 	while (!stabilized) {
 		stabilized = true;
+		int completed = 0;
+		int failed = 0;
 		for (auto& step : steps)
 		{
 			if (!step.second.is_complete)
@@ -93,8 +114,20 @@ void AutoBuild::tick()
 					}
 				}
 			}
+			// is_complete might change if executed
+			if (step.second.is_complete) {
+				completed++;
+				if (!step.second.is_success) {
+					failed++;
+				}
+			}
 		}
+		m_total_step_count = steps.size();
+		m_completed_step_count = completed;
+		m_failed_step_count = failed;
+		m_is_success = m_failed_step_count == 0;
 	}
+	m_is_idle = true;
 }
 
 void AutoBuild::execute(const Tool& tool, const Step& step, StepState& state)
