@@ -51,6 +51,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)FileTimestampQuery.hpp">
       <Filter>Platform</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Assertions.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TestFramework.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MacroHelpers.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Win32DefaultConsoleDriver.cpp">
@@ -90,6 +93,9 @@
       <Filter>Src</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)ResourceManager.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Assertions.cpp">
       <Filter>Src</Filter>
     </ClCompile>
   </ItemGroup>

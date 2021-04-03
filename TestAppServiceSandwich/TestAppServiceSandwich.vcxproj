@@ -35,6 +35,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AssertionsTest.cpp" />
     <ClCompile Include="AutoBuildTest.cpp" />
     <ClCompile Include="CommandLineParserTest.cpp" />
     <ClCompile Include="DependencyManagerAutoFactoryTest.cpp" />

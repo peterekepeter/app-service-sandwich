@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)ApplicationServices.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Assertions.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)AutoBuild.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ChangeInformation.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CommandLineParser.hpp" />
@@ -25,14 +26,17 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)FileTimestampQuery.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)IConsoleDriver.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ITimestampingService.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)MacroHelpers.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ProcessCommand.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ResourceManager.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)ResourcePath.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TestFramework.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Win32DefaultConsoleDriver.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Win32MessageBoxConsoleDriver.hpp" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Win32TimestampingService.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Assertions.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)AutoBuild.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ChangeInformation.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CommandLineParser.cpp" />
