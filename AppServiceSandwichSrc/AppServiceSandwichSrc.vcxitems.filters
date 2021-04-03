@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Primitives">
+      <UniqueIdentifier>{f6b01cbe-1d4f-4253-a8da-e4f66caad338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{8d67e1d8-3b39-41d2-9dc2-0f2afb8f3270}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Win32">
+      <UniqueIdentifier>{15b43dee-633b-4867-97d8-f402774dea52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Primitives\Src">
+      <UniqueIdentifier>{586c0ab0-c939-40c7-838b-361de00ec5e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Win32\Src">
+      <UniqueIdentifier>{31814213-8dba-41e1-990d-bd771f996efc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{540eb285-4ab9-43fe-9aad-a107e7a74cc5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Win32TimestampingService.hpp">
+      <Filter>Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Win32MessageBoxConsoleDriver.hpp">
+      <Filter>Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Win32DefaultConsoleDriver.hpp">
+      <Filter>Platform\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ITimestampingService.hpp">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)IConsoleDriver.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ChangeInformation.hpp">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ResourcePath.hpp">
+      <Filter>Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)DirectoryChangeReader.hpp">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ProcessCommand.hpp">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)FileTimestampQuery.hpp">
+      <Filter>Platform</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Win32DefaultConsoleDriver.cpp">
+      <Filter>Platform\Win32\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Win32MessageBoxConsoleDriver.cpp">
+      <Filter>Platform\Win32\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Win32ProcessCommand.cpp">
+      <Filter>Platform\Win32\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Win32TimestampingService.cpp">
+      <Filter>Platform\Win32\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ChangeInformation.cpp">
+      <Filter>Primitives\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ResourcePath.cpp">
+      <Filter>Primitives\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)DirectoryChangeReader.cpp">
+      <Filter>Platform\Win32\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)FileTimestampQuery.cpp">
+      <Filter>Platform\Win32\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AutoBuild.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)CommandLineParser.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Console.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)DirectoryChangeService.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ResourceManager.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

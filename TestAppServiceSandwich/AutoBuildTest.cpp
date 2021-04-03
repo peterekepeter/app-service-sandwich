@@ -1,5 +1,5 @@
 #include "CppUnitTest.h"
-#include "AutoBuild.hpp"
+#include "../AppServiceSandwichSrc/AutoBuild.hpp"
 #include <vector>
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;

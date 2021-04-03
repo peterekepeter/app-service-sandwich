@@ -1,6 +1,5 @@
-
 #pragma once
-#include "Console.hpp"
+#include "IConsoleDriver.h"
 
 class Win32DefaultConsoleDriver : public IConsoleDriver
 {

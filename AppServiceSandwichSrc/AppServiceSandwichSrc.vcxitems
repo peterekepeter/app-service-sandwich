@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{46073fda-d1f0-492a-9067-efc5ac272e33}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ApplicationServices.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AutoBuild.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ChangeInformation.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CommandLineParser.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Console.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DependencyManager.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DirectoryChangeReader.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DirectoryChangeService.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)FileTimestampQuery.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)IConsoleDriver.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ITimestampingService.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ProcessCommand.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ResourceManager.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ResourcePath.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Win32DefaultConsoleDriver.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Win32MessageBoxConsoleDriver.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Win32TimestampingService.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AutoBuild.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ChangeInformation.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CommandLineParser.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Console.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)DirectoryChangeReader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)DirectoryChangeService.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)FileTimestampQuery.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ResourceManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ResourcePath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Win32DefaultConsoleDriver.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Win32MessageBoxConsoleDriver.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Win32ProcessCommand.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Win32TimestampingService.cpp" />
+  </ItemGroup>
+</Project>

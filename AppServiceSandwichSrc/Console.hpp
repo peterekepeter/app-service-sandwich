@@ -3,16 +3,8 @@
 #include <sstream>
 #include <mutex>
 
-class IConsoleDriver
-{
-public:
-	virtual ~IConsoleDriver()
-	{
-	}
+#include "IConsoleDriver.h"
 
-	virtual void WriteOutput(const std::string& buffer) = 0;
-	virtual void WriteError(const std::string& buffer) = 0;
-};
 
 // represents a console with standard, error and input streams
 // TODO: input

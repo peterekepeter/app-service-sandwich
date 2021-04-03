@@ -2,7 +2,7 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-#include "CommandLineParser.hpp"
+#include "../AppServiceSandwichSrc/CommandLineParser.hpp"
 
 namespace Test
 {
