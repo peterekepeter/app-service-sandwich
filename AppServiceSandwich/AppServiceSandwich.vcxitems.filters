@@ -54,6 +54,13 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)Assertions.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TestFramework.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MacroHelpers.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ApplicationServices.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)AutoBuild.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CommandLineParser.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Console.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DependencyManager.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)DirectoryChangeService.hpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ResourceManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Win32DefaultConsoleDriver.cpp">

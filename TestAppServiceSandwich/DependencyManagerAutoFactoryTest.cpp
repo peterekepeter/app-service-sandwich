@@ -4,7 +4,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 #include <map>
 #include <unordered_map>
-#include "../AppServiceSandwichSrc/DependencyManager.hpp"
+#include "../AppServiceSandwich/DependencyManager.hpp"
 
 namespace Test
 {

@@ -4,7 +4,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 #include <map>
 #include <unordered_map>
-#include "../AppServiceSandwichSrc/ResourceManager.hpp"
+#include "../AppServiceSandwich/ResourceManager.hpp"
 
 namespace Test
 {
